@@ -34,7 +34,7 @@ jobs:
 `GITHUB_TOKEN` is **required** but two other parameters are optional:
 
 - `message` - a custom message you'd like to display in the automatic comment
-- `toxicity_threshold` - a float number between 0 and 1. It will used when loading the machine learning model. Its default value is 0.9.
+- `toxicity_threshold` - a float number between 0 and 1. It will be used when loading the machine learning model. Its default value is 0.9.
 
 ```yml
 on: [issue_comment, pull_request_review]

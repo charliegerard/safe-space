@@ -10,6 +10,8 @@ It currently works when comments are posted on issues and PRs, as well as when p
 
 ![](demo.gif)
 
+You can check [this example PR](https://github.com/charliegerard/dont-you-know-that-youre-toxic/pull/1)
+
 ## How to use
 
 _If you do not have any Github action already set up in your repo, start by creating a .github/workflows folder._
@@ -34,7 +36,7 @@ jobs:
 `GITHUB_TOKEN` is **required** but two other parameters are optional:
 
 - `message` - a custom message you'd like to display in the automatic comment
-- `toxicity_threshold` - a float number between 0 and 1. It will used when loading the machine learning model. Its default value is 0.9.
+- `toxicity_threshold` - a float number between 0 and 1. It will be used when loading the machine learning model. Its default value is 0.9.
 
 ```yml
 on: [issue_comment, pull_request_review]

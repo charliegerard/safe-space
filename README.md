@@ -54,3 +54,5 @@ jobs:
           message: "this is my custom message"
           toxicity_threshold: 0.7
 ```
+
+The action can take up to 40s to run so if you are testing it out in your repository, keep in mind that the bot will not display right after a toxic comment is posted.

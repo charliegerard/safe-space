@@ -1,0 +1,64 @@
+/**
+ * @license
+ * Copyright 2018 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+import * as tfc from '@tensorflow/tfjs-core';
+import { getParamValue } from './utils';
+export const executeOp = (node, tensorMap, context) => {
+    switch (node.op) {
+        case 'BiasAdd':
+        case 'AddV2':
+        case 'Add': {
+            return [tfc.add(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'AddN': {
+            return [tfc.addN(getParamValue('tensors', node, tensorMap, context))];
+        }
+        case 'FloorMod':
+        case 'Mod':
+            return [tfc.mod(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        case 'Mul':
+            return [tfc.mul(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        case 'RealDiv':
+        case 'Div': {
+            return [tfc.div(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'DivNoNan': {
+            return [tfc.divNoNan(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'FloorDiv': {
+            return [tfc.floorDiv(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'Sub': {
+            return [tfc.sub(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'Minimum': {
+            return [tfc.minimum(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'Maximum': {
+            return [tfc.maximum(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'Pow': {
+            return [tfc.pow(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        case 'SquaredDifference': {
+            return [tfc.squaredDifference(getParamValue('a', node, tensorMap, context), getParamValue('b', node, tensorMap, context))];
+        }
+        default:
+            throw TypeError(`Node type ${node.op} is not implemented`);
+    }
+};
+export const CATEGORY = 'arithmetic';
+//# sourceMappingURL=arithmetic_executor.js.map

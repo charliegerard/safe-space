@@ -1,4 +1,4 @@
-# Don't you know that you're toxic - Github action
+# Safe space - Github action
 
 Github action that uses machine learning to detect potential toxic comments added to PRs and issues so authors can have a chance to edit them and keep repos a safe space.
 
@@ -10,7 +10,7 @@ It currently works when comments are posted on issues and PRs, as well as when p
 
 ![](demo.gif)
 
-You can check [this example PR](https://github.com/charliegerard/dont-you-know-that-youre-toxic/pull/1)
+You can check [this example PR](https://github.com/charliegerard/safe-space/pull/1)
 
 ## How to use
 
@@ -24,11 +24,11 @@ on: [issue_comment, pull_request_review]
 jobs:
   toxic_check:
     runs-on: ubuntu-latest
-    name: Don't you know that you're toxic
+    name: Safe space
     steps:
       - uses: actions/checkout@v2
-      - name: Don't you know that you're toxic - action step
-        uses: charliegerard/dont-you-know-that-youre-toxic@master
+      - name: Safe space - action step
+        uses: charliegerard/safe-space@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -44,11 +44,11 @@ on: [issue_comment, pull_request_review]
 jobs:
   toxic_check:
     runs-on: ubuntu-latest
-    name: Don't you know that you're toxic
+    name: Toxicity check
     steps:
       - uses: actions/checkout@v2
-      - name: Don't you know that you're toxic - action step
-        uses: charliegerard/dont-you-know-that-youre-toxic@master
+      - name: Safe space - action step
+        uses: charliegerard/safe-space@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: "this is my custom message"

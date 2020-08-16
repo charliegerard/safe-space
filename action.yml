@@ -1,4 +1,4 @@
-name: "Don't you know that you're toxic"
+name: "Safe space"
 description: "Detect the potential toxicity of PR comments"
 inputs:
   GITHUB_TOKEN:

@@ -631,7 +631,7 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    Don't you know that you're toxic - Github action to detect toxicity of comments
+    Safe space - Github action to detect toxicity of comments
     Copyright (C) 2020 Charlie Gerard
 
     This program is free software: you can redistribute it and/or modify
@@ -652,7 +652,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    Don't you know that you're toxic - Github action to detect toxicity of comments - Copyright (C) 2020 Charlie Gerard
+    Safe space - Github action to detect toxicity of comments - Copyright (C) 2020 Charlie Gerard
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.

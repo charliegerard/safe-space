@@ -1,5 +1,5 @@
 {
-  "name": "dont-you-know-that-youre-toxic",
+  "name": "safe-space",
   "version": "1.0.0",
   "description": "A Github action to detect the toxicity of comments in PRs and issues",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charliegerard/dont-you-know-that-youre-toxic.git"
+    "url": "git+https://github.com/charliegerard/safe-space.git"
   },
   "keywords": [
     "Tensorflow.js",
@@ -27,7 +27,7 @@
   "author": "Charlie Gerard - @devdevcharlie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charliegerard/dont-you-know-that-youre-toxic/issues"
+    "url": "https://github.com/charliegerard/safe-space/issues"
   },
-  "homepage": "https://github.com/charliegerard/dont-you-know-that-youre-toxic#readme"
+  "homepage": "https://github.com/charliegerard/safe-space#readme"
 }

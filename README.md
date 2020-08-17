@@ -10,7 +10,7 @@ It currently works when comments are posted on issues and PRs, as well as when p
 
 ![](demo.gif)
 
-You can check [this example PR](https://github.com/charliegerard/safe-space/pull/1)
+If you want some details about how it works, feel free to check the [blog post](https://charliegerard.dev/blog/github-action-toxic-comments).
 
 ## How to use
 

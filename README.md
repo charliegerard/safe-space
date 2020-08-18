@@ -14,7 +14,7 @@ If you want some details about how it works, feel free to check the [blog post](
 
 ## How to use
 
-_If you do not have any Github action already set up in your repo, start by creating a .github/workflows folder._
+_If you do not have any Github actions already set up in your repo, start by creating a .github/workflows folder._
 
 Inside your workflows folder, create a new .yml file, for example `main.yml` and copy the following lines:
 
@@ -55,4 +55,4 @@ jobs:
           toxicity_threshold: 0.7
 ```
 
-The action can take up to 40s to run so if you are testing it out in your repository, keep in mind that the bot will not display right after a toxic comment is posted.
+The action can take up to 40s to run so, if you are testing it out in your repository, keep in mind that the bot will not display right after a toxic comment is posted.

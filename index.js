@@ -7,6 +7,8 @@ async function run() {
   const toxicity = require("@tensorflow-models/toxicity");
   await tf.setBackend("cpu");
 
+  console.log("test change");
+
   try {
     const githubToken = core.getInput("GITHUB_TOKEN");
     const octokit = new Octokit({ auth: githubToken });

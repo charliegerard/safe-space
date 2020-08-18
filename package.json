@@ -2,10 +2,11 @@
   "name": "safe-space",
   "version": "1.0.0",
   "description": "A Github action to detect the toxicity of comments in PRs and issues",
-  "main": "dist/index.js",
+  "main": "index.js",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
+    "@octokit/rest": "^18.0.3",
     "@tensorflow-models/toxicity": "^1.2.2",
     "@tensorflow/tfjs": "^2.3.0"
   },

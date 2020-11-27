@@ -33,7 +33,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-`GITHUB_TOKEN` is **required** but two other parameters are optional:
+`GITHUB_TOKEN` is **required** (note that Github [automatically creates this token](https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow#:~:text=and%20use%20secrets.-,About%20the%20GITHUB_TOKEN%20secret,authenticate%20in%20a%20workflow%20run.&text=The%20token's%20permissions%20are%20limited,%22Permissions%20for%20the%20GITHUB_TOKEN%20.%22)) but two other parameters are optional:
+
 
 - `message` - a custom message you'd like to display in the automatic comment
 - `toxicity_threshold` - a float number between 0 and 1. It will be used when loading the machine learning model. Its default value is 0.9.

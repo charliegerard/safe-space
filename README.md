@@ -6,9 +6,6 @@ It uses the [Tensorflow.js toxicity classification model](https://github.com/ten
 
 It currently works when comments are posted on issues and PRs, as well as when pull request reviews are submitted.
 
-## Demo
-
-![](demo.gif)
 
 If you want some details about how it works, feel free to check the [blog post](https://charliegerard.dev/blog/github-action-toxic-comments).
 

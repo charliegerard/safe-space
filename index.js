@@ -16,39 +16,6 @@ async function run() {
     const repository = context.payload.repository;
     const threshold = toxicityThreshold ? toxicityThreshold : 0.9;
 
-    if (context.payload.review && context.payload.action === "submitted") {
-      const issueNumber = context.payload.pull_request.number;
-      const model = await toxicity.load(threshold);
-      const reviewComment = [context.payload.review.body];
-      const reviewObject = context.payload.review;
-      let toxicComment = undefined;
-      model.classify(reviewComment).then((predictions) => {
-        predictions.forEach((prediction) => {
-          if (toxicComment) {
-            return;
-          }
-          prediction.results.forEach((result, index) => {
-            if (toxicComment) {
-              return;
-            }
-            if (result.match) {
-              const commentAuthor = reviewObject.user.login;
-              toxicComment = reviewComment[0];
-              const message = customMessage
-                ? customMessage
-                : `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
-              console.log('this is a test of console logging from an action 👋')
-              return octokit.issues.createComment({
-                owner: repository.owner.login,
-                repo: repository.name,
-                issue_number: issueNumber,
-                body: message,
-              });
-            }
-          });
-        });
-      });
-    }
     if (context.payload.comment) {
       if (
         context.payload.action === "created" ||
@@ -73,10 +40,8 @@ async function run() {
                 toxicComment = commentObject.body;
                 const message = customMessage
                   ? customMessage
-                  : `<img src="https://media.giphy.com/media/3ohzdQ1IynzclJldUQ/giphy.gif" width="400"/> </br>
-                                      Hey @${commentAuthor}! 👋 <br/> PRs and issues should be safe environments but your comment: <strong>"${toxicComment}"</strong> was classified as potentially toxic! 😔</br>
-                                      Please consider spending a few seconds editing it and feel free to delete me afterwards! 🙂`;
-
+                  : `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
+                console.log('this is a test of console logging from an action 👋')
                 return octokit.issues.createComment({
                   owner: repository.owner.login,
                   repo: repository.name,

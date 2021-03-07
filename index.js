@@ -36,10 +36,8 @@ async function run() {
               toxicComment = reviewComment[0];
               const message = customMessage
                 ? customMessage
-                : `<img src="https://media.giphy.com/media/3ohzdQ1IynzclJldUQ/giphy.gif" width="400"/> </br>
-                                      Hey @${commentAuthor}! 👋 <br/> PRs and issues should be safe environments but your comment: <strong>"${toxicComment}"</strong> was classified as potentially toxic! 😔</br>
-                                      Please consider spending a few seconds editing it and feel free to delete me afterwards! 🙂`;
-
+                : `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
+              console.log('this is a test of console logging from an action 👋')
               return octokit.issues.createComment({
                 owner: repository.owner.login,
                 repo: repository.name,

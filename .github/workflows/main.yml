@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Safe space - action step
-        uses: charliegerard/safe-space@master
+        uses: banagale/safe-space@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

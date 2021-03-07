@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Safe space - action step
-        uses: banagale/safe-space@master
+        uses: banagale/safe-space@feature/strip-down
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

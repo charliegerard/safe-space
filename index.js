@@ -3,6 +3,7 @@ const github = require("@actions/github");
 const { Octokit } = require("@octokit/rest");
 
 async function run() {
+  const filterEmailChain = require('./filterEmailChain');
   const tf = require("@tensorflow/tfjs");
   const toxicity = require("@tensorflow-models/toxicity");
   await tf.setBackend("cpu");
@@ -23,6 +24,9 @@ async function run() {
       ) {
         const issueNumber = context.payload.issue.number;
         const model = await toxicity.load(threshold);
+
+        filterEmailChain('This is an EMAIL.');
+
         const comment = [context.payload.comment.body];
         const commentObject = context.payload.comment;
         let toxicComment = undefined;
@@ -41,7 +45,7 @@ async function run() {
                 const message = customMessage
                   ? customMessage
                   : `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
-                console.log('this is a test of console logging from an action 👋')
+                console.log('this is a test of console logging from an action 👋');
                 return octokit.issues.createComment({
                   owner: repository.owner.login,
                   repo: repository.name,

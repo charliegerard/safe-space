@@ -11,5 +11,5 @@ module.exports = async function filterEmailChain(issueComment) {
     };
     return await filteredComment();
   }
-  return issueComment;
+  return false;
 };

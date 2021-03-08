@@ -21,7 +21,7 @@ function run() {
         const filteredComment = filterEmailChain(commentBody);
         const message = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
 
-        if (filteredComment !== commentBody) {
+        if (filteredComment !== false) {
           const revisedMessage = filteredComment + message;
           console.log('Issue comment meta: ', 'Repo owner:', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
 

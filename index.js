@@ -25,10 +25,12 @@ async function run() {
         const issueNumber = context.payload.issue.number;
         const model = await toxicity.load(threshold);
 
-        filterEmailChain('This is an EMAIL.');
-
         const comment = [context.payload.comment.body];
         const commentObject = context.payload.comment;
+
+        const filteredComment = filterEmailChain(context.payload.comment.body);
+        console.log(filteredComment);
+
         let toxicComment = undefined;
         model.classify(comment).then((predictions) => {
           predictions.forEach((prediction) => {

@@ -26,11 +26,11 @@ function run() {
         const message = customMessage ? customMessage : `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
         console.log('this is a test of console logging from an action 👋');
 
-        const ignore = octokit.issues.createComment({
+        const ignore = octokit.issues.update({
           owner: repository.owner.login,
           repo: repository.name,
           issue_number: issueNumber,
-          body: message,
+          body: comment + message,
         });
       }
     }

@@ -17,21 +17,18 @@ function run() {
 
         const commentBody = context.payload.comment.body;
         const commentId = context.payload.comment.id;
-        const commentObject = context.payload.comment;
 
         const filteredComment = filterEmailChain(commentBody);
-        console.log(filteredComment);
+        const message = `<br/>🤖 - Edited by BossBot - 🤖`;
 
-        const commentAuthor = commentObject.user.login;
-        const message = `Hey @${commentAuthor}! 👋 <br/> You're great 😔</br>🙂`;
-
-        console.log('owner', repository.owner, 'issue number: ', issueNumber, 'issue comment id: ', commentId);
+        const revisedMessage = filteredComment + message;
+        console.log('Issue comment meta: ', 'Repo owner', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
 
         const ignore = octokit.issues.updateComment({
           owner: repository.owner.login,
           repo: repository.name,
           comment_id: commentId,
-          body: filteredComment + message,
+          body: revisedMessage,
         });
       }
     }

@@ -2,7 +2,7 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 const { Octokit } = require("@octokit/rest");
 
-function run() {
+async function run() {
   const filterEmailChain = require('./filterEmailChain');
 
   try {
@@ -18,7 +18,7 @@ function run() {
         const commentBody = context.payload.comment.body;
         const commentId = context.payload.comment.id;
 
-        const filteredComment = filterEmailChain(commentBody);
+        const filteredComment = await filterEmailChain(commentBody);
         const message = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
 
         if (filteredComment !== false) {
@@ -39,4 +39,4 @@ function run() {
   }
 }
 
-run();
+const ignore = run();

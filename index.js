@@ -19,10 +19,10 @@ function run() {
         const commentId = context.payload.comment.id;
 
         const filteredComment = filterEmailChain(commentBody);
-        const message = `<br/>🤖 - Edited by BossBot - 🤖`;
+        const message = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
 
         const revisedMessage = filteredComment + message;
-        console.log('Issue comment meta: ', 'Repo owner', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
+        console.log('Issue comment meta: ', 'Repo owner:', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
 
         const ignore = octokit.issues.updateComment({
           owner: repository.owner.login,

@@ -21,15 +21,17 @@ function run() {
         const filteredComment = filterEmailChain(commentBody);
         const message = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
 
-        const revisedMessage = filteredComment + message;
-        console.log('Issue comment meta: ', 'Repo owner:', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
+        if (filteredComment !== commentBody) {
+          const revisedMessage = filteredComment + message;
+          console.log('Issue comment meta: ', 'Repo owner:', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
 
-        const ignore = octokit.issues.updateComment({
-          owner: repository.owner.login,
-          repo: repository.name,
-          comment_id: commentId,
-          body: revisedMessage,
-        });
+          const ignore = octokit.issues.updateComment({
+            owner: repository.owner.login,
+            repo: repository.name,
+            comment_id: commentId,
+            body: revisedMessage,
+          });
+        }
       }
     }
   } catch (error) {

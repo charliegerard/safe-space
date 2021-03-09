@@ -35,7 +35,7 @@ module.exports = async function filterEmailChain(issueComment) {
      * Remove any previous bossBot annotations
      * @type {RegExp}
      */
-    const BOSS_COPY_REGEX = /^ *(<br\/><sub>🤖+.*🤖<\/sub>)\s*$/gm;
+    const BOSS_COPY_REGEX = /^ *(<br\/><sub>Edited by .*🤖<\/sub>)\s*$/gm;
     if (updatedComment.match(BOSS_COPY_REGEX) !== null) {
       return updatedComment.replace(BOSS_COPY_REGEX, '');
     } else {

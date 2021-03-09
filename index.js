@@ -4,7 +4,7 @@ const { Octokit } = require("@octokit/rest");
 
 async function run() {
   const filterEmailChain = require('./filterEmailChain');
-  const BOSS_COPY = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
+  const BOSS_COPY = `<br/><sub>Edited by BossBot - 🤖</sub>`;
   try {
     const githubToken = core.getInput("GITHUB_TOKEN");
     const octokit = new Octokit({ auth: githubToken });

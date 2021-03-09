@@ -1,34 +1,29 @@
 {
-  "name": "safe-space",
-  "version": "1.0.0",
-  "description": "A Github action to detect the toxicity of comments in PRs and issues",
+  "name": "bossbot-action",
+  "version": "0.1.1",
+  "description": "Github action that looks for unwanted email content in issue comments and removes it.",
   "main": "index.js",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
     "@octokit/rest": "^18.0.3",
-    "@tensorflow-models/toxicity": "^1.2.2",
-    "@tensorflow/tfjs": "^2.3.0"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charliegerard/safe-space.git"
+    "url": "git+https://github.com/banagale/bossbot-action.git"
   },
   "keywords": [
-    "Tensorflow.js",
-    "TFJS",
-    "machine learning",
     "Github action",
-    "Toxicity classifier",
-    "ML",
+    "email",
+    "issues",
+    "comment editor",
     "JavaScript",
-    "TensorFlow"
   ],
-  "author": "Charlie Gerard - @devdevcharlie",
+  "author": "Rob Banagale - @banagale",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charliegerard/safe-space/issues"
+    "url": "https://github.com/banagale/bossbot-action/issues"
   },
-  "homepage": "https://github.com/charliegerard/safe-space#readme"
+  "homepage": "https://github.com/banagale/bossbot-action/blob/master/README.md"
 }

@@ -38,6 +38,8 @@ module.exports = async function filterEmailChain(issueComment) {
     const BOSS_COPY_REGEX = /^ *(<br\/><sub>🤖+.*🤖<\/sub>)\s*$/gm;
     if (updatedComment.match(BOSS_COPY_REGEX) !== null) {
       return updatedComment.replace(BOSS_COPY_REGEX, '');
+    } else {
+      return updatedComment;
     }
   };
   const updatedComment = await filterReply(issueComment);

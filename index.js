@@ -4,7 +4,7 @@ const { Octokit } = require("@octokit/rest");
 
 async function run() {
   const filterEmailChain = require('./filterEmailChain');
-
+  const BOSS_COPY = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
   try {
     const githubToken = core.getInput("GITHUB_TOKEN");
     const octokit = new Octokit({ auth: githubToken });
@@ -19,10 +19,9 @@ async function run() {
         const commentId = context.payload.comment.id;
 
         const filteredComment = await filterEmailChain(commentBody);
-        const message = `<br/><sub>🤖 - Edited by BossBot - 🤖</sub>`;
 
         if (filteredComment !== false) {
-          const revisedMessage = filteredComment + message;
+          const revisedMessage = filteredComment + BOSS_COPY;
           console.log('Issue comment meta: ', 'Repo owner:', repository.owner.login, 'Issue number: ', issueNumber, 'Comment id: ', commentId);
 
           const ignore = octokit.issues.updateComment({

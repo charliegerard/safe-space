@@ -1,5 +1,8 @@
 name: "BossBot - Github Issue Comment Cleanup"
 description: "Detect unwanted email content in issue comments"
+branding:
+  icon: 'edit'
+  color: 'purple'
 inputs:
   GITHUB_TOKEN:
     required: true

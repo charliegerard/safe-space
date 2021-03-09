@@ -14,8 +14,10 @@ _If you do not have any Github actions already set up in your repo, start by cre
 
 Inside your workflows folder, create a new .yml file, for example `main.yml` and copy the following lines:
 
+Don't forget that this must be merged into your primary branch (such as `main` or `master`) for Github to see it.
+
 ```yml
-on: [issue_comment, pull_request_review]
+on: [issue_comment]
 
 jobs:
   bossbot_issue_comment_cleanup:

@@ -8,7 +8,8 @@ async function run() {
   const showAnnotation = core.getInput("show_annotation");
 
   let bossCopy;
-  if (showAnnotation === 'false') {
+  if ((showAnnotation === 'false') || (showAnnotation === false)) {
+    console.log('BossBot Annotation disabled');
     bossCopy = '';
   } else {
     bossCopy = `<br/><sub>Edited by BossBot - 🤖</sub>`;

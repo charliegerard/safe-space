@@ -32,7 +32,7 @@ module.exports = async function filterEmailChain(issueComment) {
 
   const filterBoss = async (updatedComment) => {
     /**
-     * Remove any previous bossBot annotations
+     * Remove any previous BossBot annotations
      * @type {RegExp}
      */
     const BOSS_COPY_REGEX = /^ *(<br\/><sub>Edited by .*🤖<\/sub>)\s*$/gm;

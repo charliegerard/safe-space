@@ -10,4 +10,4 @@ jobs:
         uses: banagale/safe-space@feature/strip-down
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHOW_ANNOTATION: true
+          SHOW_ANNOTATION: false

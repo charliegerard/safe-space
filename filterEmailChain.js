@@ -19,7 +19,10 @@ module.exports = async function filterEmailChain(issueComment) {
       };
       return await filteredComment();
     } else if (issueComment.match(GMAIL_EMAIL_REGEX) !== null) {
-      return issueComment.replace(GMAIL_EMAIL_REGEX, '');
+      const filteredComment = async () => {
+        return issueComment.replace(GMAIL_EMAIL_REGEX, '');
+      };
+      return await filteredComment();
     } else {
       console.log('No email reply detected');
       return false;
@@ -32,8 +35,6 @@ module.exports = async function filterEmailChain(issueComment) {
      * @type {RegExp}
      */
     const BOSS_COPY_REGEX = /^ *(<br\/><sub>🤖+.*🤖<\/sub>)\s*$/gm;
-    console.log('debug updatedComment');
-    console.log(updatedComment);
     if (updatedComment.match(BOSS_COPY_REGEX) !== null) {
       return updatedComment.replace(BOSS_COPY_REGEX, '');
     }
@@ -44,6 +45,6 @@ module.exports = async function filterEmailChain(issueComment) {
   if (updatedComment !== false) {
     return await filterBoss(updatedComment);
   } else {
-    return await filterReply(issueComment);
+    return updatedComment;
   }
 };

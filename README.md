@@ -35,24 +35,7 @@ jobs:
   but two other parameters are optional:
 - `show_annotation` is optional and true if unset. Set to false if you do not want messages edited by BossBot to include
   an annotation
-
-```yml
-on: [issue_comment, pull_request_review]
-
-jobs:
-  toxic_check:
-    runs-on: ubuntu-latest
-    name: Toxicity check
-    steps:
-      - uses: actions/checkout@v2
-      - name: Safe space - action step
-        uses: charliegerard/safe-space@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: "this is my custom message"
-          toxicity_threshold: 0.7
-```
-
+  
 The action can take up to ~30 seconds to run after an issue comment is added or edited.
 
 ## Acknowledgements

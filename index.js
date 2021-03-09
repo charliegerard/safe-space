@@ -12,7 +12,7 @@ async function run() {
     console.log('BossBot Annotation disabled');
     bossCopy = '';
   } else {
-    bossCopy = `<br/><sub>Edited by BossBot - 🤖</sub>`;
+    bossCopy = `Edited by BossBot - 🤖`;
   }
 
   try {

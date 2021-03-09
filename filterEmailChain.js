@@ -35,7 +35,7 @@ module.exports = async function filterEmailChain(issueComment) {
      * Remove any previous BossBot annotations
      * @type {RegExp}
      */
-    const BOSS_COPY_REGEX = /^ *(<br\/><sub>Edited by .*🤖<\/sub>)\s*$/gm;
+    const BOSS_COPY_REGEX = /^ *(Edited by .*🤖)\s*$/gm;
     if (updatedComment.match(BOSS_COPY_REGEX) !== null) {
       return updatedComment.replace(BOSS_COPY_REGEX, '');
     } else {
@@ -43,9 +43,6 @@ module.exports = async function filterEmailChain(issueComment) {
     }
   };
   const updatedComment = await filterReply(issueComment);
-
-  console.log('updatedComment is: ');
-  console.log(updatedComment);
 
   if (updatedComment !== false) {
     return await filterBoss(updatedComment);

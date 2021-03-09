@@ -1,7 +1,7 @@
 on: [issue_comment, pull_request_review]
 
 jobs:
-  toxic_check:
+  boss_bot:
     runs-on: ubuntu-latest
     name: Safe space
     steps:
@@ -10,3 +10,4 @@ jobs:
         uses: banagale/safe-space@feature/strip-down
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHOW_ANNOTATION: true

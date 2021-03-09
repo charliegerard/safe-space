@@ -3,9 +3,7 @@ description: "Detect the potential toxicity of PR comments"
 inputs:
   GITHUB_TOKEN:
     required: true
-  message:
-    required: false
-  toxicity_threshold:
+  show_annotation:
     required: false
 runs:
   using: "node12"

@@ -10,7 +10,7 @@ module.exports = async function filterEmailChain(issueComment) {
      * @type {RegExp}
      */
     const OUTLOOK_EMAIL_REGEX = /^\s*(From:.*[^]*)\b(?:unsubscribe.)$/gm;
-    const GMAIL_EMAIL_REGEX = /^\s*(on .*[^]*)\b(wrote:.*[^]*)+(reply to this email directly,.*[^]*)+>(.*\s*)$/gm;
+    const GMAIL_EMAIL_REGEX = /^>.*(?:wrote:)(\s*.*)+(or unsubscribe\.)$/gm;
 
     if (issueComment.match(OUTLOOK_EMAIL_REGEX) !== null) {
       console.log('Filtering issue comment for outlook remenants');

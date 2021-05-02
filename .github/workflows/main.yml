@@ -1,12 +1,13 @@
-on: [issue_comment, pull_request_review]
+on: [issue_comment]
 
 jobs:
-  toxic_check:
+  bossbot_issue_comment_cleanup:
     runs-on: ubuntu-latest
-    name: Safe space
+    name: BossBot - Github Issue Comment Cleanup
     steps:
       - uses: actions/checkout@v2
-      - name: Safe space - action step
-        uses: charliegerard/safe-space@master
+      - name: BossBot - Github Issue Comment Cleanup - action step
+        uses: banagale/bossbot-action@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHOW_ANNOTATION: true

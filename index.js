@@ -54,7 +54,7 @@ async function run() {
     if (context.payload.comment) {
       if (
         context.payload.action === "created" ||
-        context.payoad.action === "edited"
+        context.payload.action === "edited"
       ) {
         const issueNumber = context.payload.issue.number;
         const model = await toxicity.load(threshold);
